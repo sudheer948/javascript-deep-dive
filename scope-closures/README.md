@@ -71,3 +71,49 @@ Combined with closures, it can simulate private modules:
 - Public API returned as an object
 
 This pattern was widely used before ES Modules.
+
+---
+
+## Closure Pitfalls
+
+### var in loops
+
+Closures capture variable bindings, not snapshots.
+
+With `var`, there is only one shared binding.
+All callbacks reference the same variable.
+
+### Fixes
+- Use `let`
+- Use IIFE
+
+---
+
+## Leaked Mutable Shared State
+
+Closures protect variables, not object references.
+
+Returning an internal object leaks shared mutable state.
+Return a copy instead.
+
+---
+
+## Hoisting
+
+- `var` is hoisted and initialized as `undefined`.
+- `let` and `const` are hoisted but remain uninitialized.
+
+---
+
+## Temporal Dead Zone (TDZ)
+
+The time between entering scope and variable initialization.
+
+Accessing variables in TDZ throws `ReferenceError`.
+
+---
+
+## Block Scope
+
+- `let` and `const` are block-scoped.
+- `var` is function-scoped.
