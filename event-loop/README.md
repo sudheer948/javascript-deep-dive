@@ -59,3 +59,21 @@ Microtasks have higher priority than macrotasks.
 ## Golden Rule
 
 Microtasks always run before the next macrotask.
+
+---
+
+## Microtask Draining Behavior
+
+Microtasks are always drained completely
+before the engine proceeds to the next macrotask.
+
+### Nested Microtasks
+
+When a microtask schedules another microtask,
+the engine continues draining until the queue is empty.
+
+### Microtask Inside Macrotask
+
+After a macrotask finishes executing,
+the engine immediately drains the microtask queue
+before moving to the next macrotask.
