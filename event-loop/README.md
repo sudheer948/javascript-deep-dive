@@ -77,3 +77,27 @@ the engine continues draining until the queue is empty.
 After a macrotask finishes executing,
 the engine immediately drains the microtask queue
 before moving to the next macrotask.
+
+---
+
+## await Behavior
+
+`await` pauses an async function.
+
+The continuation after `await`
+is scheduled as a microtask.
+
+This makes `await` behave similarly to `Promise.then`.
+
+Microtasks always run before macrotasks.
+
+---
+
+## queueMicrotask
+
+`queueMicrotask` explicitly schedules a function
+in the microtask queue.
+
+It runs:
+- After synchronous code
+- Before any macrotask
