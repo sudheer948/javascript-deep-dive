@@ -101,3 +101,18 @@ in the microtask queue.
 It runs:
 - After synchronous code
 - Before any macrotask
+
+---
+
+## Custom Microtask Scheduler
+
+Using `Promise.resolve().then(...)`,
+we can schedule a function in the microtask queue.
+
+This demonstrates:
+
+- How microtasks are queued
+- Why they execute after synchronous code
+- How draining behavior works
+
+This example reinforces the internal mechanics of the Event Loop.
