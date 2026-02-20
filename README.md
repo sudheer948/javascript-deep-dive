@@ -6,7 +6,7 @@ language behavior, and advanced patterns.
 ## Modules
 
 - scope-closures
-- event-loop (coming next)
+- event-loop
 - prototypes-this (planned)
 - async-patterns (planned)
 - functional-immutability (planned)
